@@ -3,49 +3,4 @@ body {
     background-size: 800px;
      
 }
-.wrapper {
-     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-}
-.container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); 
-}
 
-@-webkit-keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to { 
-    transform: rotate(360deg);
-  }
-}
-
-@-moz-keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to { 
-    transform: rotate(360deg);
-  }
-}
-
-@-o-keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to { 
-    transform: rotate(360deg);
-  }
-}
-
-img {
-  	animation-name: rotate;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
