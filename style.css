@@ -1,6 +1,39 @@
-body {
-    background-image: url(music-chart.png);
-    background-size: 800px;
-     
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+/* Background setup */
+body {
+  background-image: url('music-chart.png'); /* replace with your correct filename */
+  background-size: contain; /* Ensures entire image fits */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black; /* fills space outside image, optional */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Style for the button wrapper */
+#enter-page {
+  margin-bottom: 40px;
+}
+
+/* Big button style */
+#enter-page button {
+  font-size: 2rem;
+  padding: 1rem 2.5rem;
+  background-color: rgba(242, 64, 255, 0.9);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+#enter-page button:hover {
+  background-color: rgba(233, 30, 99, 0.9);
+}
