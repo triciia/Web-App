@@ -1,0 +1,17 @@
+body {
+    background-color: #1B3C53;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #F9F3EF;
+    font-size: 1.5em;
+    font-family: "Winky Rough", sans-serif;
+}
+.navbar .navbar-nav .nav-link:hover{
+    background-color: #f9f3ef;
+
+    color: #456882;
+}
+.navbar-logo-centered .navbar-nav .nav-link{
+    padding: .5em 1em;
+}
