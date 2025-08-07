@@ -21,6 +21,12 @@ body {
     padding: .5em 1em;
 }
 
+/*--- Heading --- */
+h1 {
+     font-family: "Winky Rough", sans-serif;
+     text-align: center;
+}
+
 /* --- Carousel --- */
 
 .carousel-item {
@@ -48,4 +54,26 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+.card {
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 1em 1em;
+  transition: all 0.3s;
+}
 
+.card:hover {
+  transform: scale(1.05)
+}
+
+.card img {
+  border-radius: 5px 5px 0px 0px;
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 520px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.25em;
+}
