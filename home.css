@@ -65,12 +65,10 @@ h1 {
   transform: scale(1.05)
 }
 
-.card img {
-  border-radius: 5px 5px 0px 0px;
-  height: auto;
-  max-height: 250px;
-  width: auto;
-  max-width: 520px;
+.card-img-top{
+  height: 14rem;
+  width: 16rem;
+  object-fit: fill;
 }
 
 .card-title {

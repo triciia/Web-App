@@ -30,7 +30,7 @@ async function getAllRecords() {
         let description = data.records[i].fields["description"];
 
         newHtml += `
-         <div class="card" style="width: 18rem;">
+         <div class="card-img-top" style="width: 18rem;">
   <img src="${logo[0].url}" class="card-img-top card-img-all" alt="Store Logo">
   <div class="card-body">
     <h5 class="card-title">${name}</h5>
@@ -49,29 +49,32 @@ async function getAllRecords() {
 
 // function for our detail view
 async function getOneRecord(id) {
-  let jobsResultElement = document.getElementById("brews");
+  let getResultElement = document.getElementById("brews");
 
   const options = {
     method: "GET",
     headers: {
-      Authorization: `Bearer pateG7pBF1CkfmcW7.2c666498dc7818660958fea1c0bb95e5e1d33bbdb4871fed8ee5696394e05ce5`,
+      Authorization: `Bearer patJ16XFNlD2ArGQb.8cd313c86b92e2a506b233aa9294ce69a905a6ceabf0079ab1e3ef940f6b317a`,
     },
   };
 
   await fetch(
-    `https://api.airtable.com/v0/appwpo3UidxK3Lgsh/Record%20Store%20Locations${id}`,
+    `https://api.airtable.com/v0/appwpo3UidxK3Lgsh/Record%20Store%20Locations/${id}`,
     options
   )
     .then((response) => response.json())
     .then((data) => {
       console.log(data); // response is a single object
+       getResultElement.innerHTML = "";
 
-      let picture = data.fields["Picture"];
-      let name = data.fields["Name"];
+       let newHtml = "";
+
+      let image = data.fields["img"];
+      let name = data.fields["name"];
       let address = data.fields["Address"];
-      let zip = data.fields["Zip"];
-      let neighborhood = data.fields["Neighborhood"];
-      let description = data.fields["Description"];
+      let zip = data.fields["zip"];
+      let neighborhood = data.fields["neighborhood"];
+      let description = data.fields["description"];
       let logo = data.fields["Logo"];
       let hours = data.fields["Hours"];
       let happy = data.fields["Happy"];
@@ -84,24 +87,25 @@ async function getOneRecord(id) {
       let yelp = data.fields["Yelp"];
       let map = data.fields["Map"];
 
-      let newHtml = `
-        <div class="card list mb-3">
-  <div class="row g-0">
-    <div class="col-md-4 d-flex justify-content-center align-items-center">
-     ${
-       logo
-         ? `<img class="img-fluid back ms-4" alt="${name}" src="${logo[0].url}">`
-         : ``
-     }
-    </div>
+       newHtml = `
+             <div class="row">
+          <div class="col">
+            ${
+              image
+                ? `<img class="details-image" src="${image[0].url}" alt="Photo of ${name}">`
+                : ``
+            }
+            
+          </div>
+          </div>
 
-      `;
+              `;
 
-      jobsResultElement.innerHTML = newHtml;
+      getResultElement.innerHTML = newHtml;
     });
 }
 
-let idParams = window.location.search.split("?=id");
+let idParams = window.location.search.split("?id=");
 if (idParams.length >= 2) {
   getOneRecord(idParams[1]);
 } else {
