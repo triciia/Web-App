@@ -24,7 +24,9 @@ body {
 /*--- Heading --- */
 h1 {
      font-family: "Winky Rough", sans-serif;
+     color:  #F9F3EF;
      text-align: center;
+     font-weight: bold;
 }
 
 /* --- Carousel --- */
