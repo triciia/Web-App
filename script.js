@@ -26,18 +26,26 @@ async function getAllRecords() {
       for (let i = 0; i < data.records.length; i++) {
         let logo = data.records[i].fields["logo"]; // here we are getting column values
         let name = data.records[i].fields["Name"]; //here we are using the Field ID to fecth the name property
+        let address = data.records[i].fields["address"]
         let neighborhood = data.records[i].fields["neighborhood"];
         let description = data.records[i].fields["description"];
 
         newHtml += `
-         <div class="card-img-top" style="width: 18rem;">
-  <img src="${logo[0].url}" class="card-img-top card-img-all" alt="Store Logo">
-  <div class="card-body">
-    <h5 class="card-title">${name}</h5>
-    <p class="card-text"></p>
-    <a href="stores.html?id=${data.records[i].id}" class="btn btn-primary btn-all ">Learn More!</a>
-  </div>
-</div> 
+             <div class="col-md-4 store-card">
+            <div class="card">
+              ${logo ? `<img src="${logo[0].url}" alt="Photo of ${name}">` : ``}
+              <div class="card-body">
+                <h5 class="card-title">
+                   ${name}
+                </h5>
+                <p>${address}</p>
+                <a class="mt-1 btn btn-primary mt-2" href="stores.html?id=${
+                  data.records[i].id
+                }">Learn more!</a>
+              </div>
+            </div>
+          </div>
+    
     
         
         `;

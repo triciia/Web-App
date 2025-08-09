@@ -1,3 +1,9 @@
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
 body {
     background-color: #456882;
 }
@@ -32,7 +38,7 @@ h1 {
 /* --- Carousel --- */
 
 .carousel-item {
-    height: 100vh;
+    height: 100vh;   
     min-height: 300px;
     background: no-repear scroll center scroll;
     -webkit-background-size: cover;
@@ -56,24 +62,74 @@ h1 {
   text-decoration: none;
   cursor: pointer;
 }
+.store-card {
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.store-card a::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+}
 .card {
   height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 1em 1em;
   transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  max-width: 280px; 
+  
 }
 
 .card:hover {
   transform: scale(1.05)
 }
+.card-img-container {
+  height: 180px; /* Fixed container height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: white; /* Clean white background for logos */
+  border-bottom: 1px solid #eee; /* Subtle separation */
+}
 
-.card-img-top{
-  height: 14rem;
-  width: 16rem;
-  object-fit: fill;
+.card img {
+  border-radius: 5px 5px 0px 0px;
+ max-height: 100%;
+ max-width: 100%;
+ width: auto;
+  height: auto;
+  object-fit: contain;
+
+}
+.card-body {
+    padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title {
   font-weight: bold;
   font-size: 1.25em;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers cards in row */
+}
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 32%; /* Makes cards wider with consistent spacing */
+  max-width: 400px; 
+  min-width: 300px;
+  padding: 0 8px;
 }
