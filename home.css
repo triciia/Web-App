@@ -48,8 +48,8 @@ h1 {
 /* ---- All Stores Section --- */
 /* ----CARDS --- */
 
-.btn-all {
-    background-color: #f4511e;
+.btn-primary{
+    background-color: #456882;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -84,6 +84,8 @@ h1 {
   display: flex;
   flex-direction: column;
   max-width: 280px; 
+    background-color: #F9F3EF;
+   
   
 }
 
@@ -91,13 +93,13 @@ h1 {
   transform: scale(1.05)
 }
 .card-img-container {
-  height: 180px; /* Fixed container height */
+  height: 180px; 
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15px;
-  background-color: white; /* Clean white background for logos */
-  border-bottom: 1px solid #eee; /* Subtle separation */
+  background-color: #D2C1B6; 
+  border-bottom: 1px solid #eee; 
 }
 
 .card img {
@@ -118,7 +120,8 @@ h1 {
 
 .card-title {
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1.8em;
+  font-family: "Winky Rough", sans-serif;
 }
 .row {
   display: flex;
@@ -133,3 +136,12 @@ h1 {
   min-width: 300px;
   padding: 0 8px;
 }
+
+.address {
+  font-family: "Winky Rough", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+     color:  #1B3C53;
+}
+
+/* ---- Single Record Format --- */

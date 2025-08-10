@@ -38,8 +38,8 @@ async function getAllRecords() {
                 <h5 class="card-title">
                    ${name}
                 </h5>
-                <p>${address}</p>
-                <a class="mt-1 btn btn-primary mt-2" href="stores.html?id=${
+                <p class = "address">${address}</p>
+                <a class="mt-1 btn btn-primary mt-2 " href="stores.html?id=${
                   data.records[i].id
                 }">Learn more!</a>
               </div>
@@ -84,7 +84,7 @@ async function getOneRecord(id) {
       let neighborhood = data.fields["neighborhood"];
       let description = data.fields["description"];
       let logo = data.fields["Logo"];
-      let hours = data.fields["Hours"];
+      let hours = data.fields["hours"];
       let happy = data.fields["Happy"];
       let food = data.fields["Food"];
       let website = data.fields["Website"];
