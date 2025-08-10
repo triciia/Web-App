@@ -10,14 +10,17 @@ body {
 
 /* --- Navbar --- */
 .navbar {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+   padding-top: 0;
+   padding-bottom: 0;
+   min-height: 80px;
 }
 .navbar .navbar-nav .nav-link {
     color: #F9F3EF;
     font-size: 1.5em;
+    padding: 0.5rem 1rem;
     font-family: "Winky Rough", sans-serif;
 }
+
 .navbar .navbar-nav .nav-link:hover{
     background-color: #f9f3ef;
 
@@ -29,6 +32,7 @@ body {
 
 /*--- Heading --- */
 h1 {
+
      font-family: "Winky Rough", sans-serif;
      color:  #F9F3EF;
      text-align: center;
@@ -38,11 +42,14 @@ h1 {
 /* --- Carousel --- */
 
 .carousel-item {
-    height: 100vh;   
-    min-height: 300px;
+    height: 70vh;   
     background: no-repear scroll center scroll;
     -webkit-background-size: cover;
     background-size: cover;
+}
+.carousel-item img {
+    height: 100%;
+    object-fit: cover; 
 }
 
 /* ---- All Stores Section --- */
@@ -112,6 +119,7 @@ h1 {
 
 }
 .card-body {
+  
     padding: 1.5rem;
   flex-grow: 1;
   display: flex;
