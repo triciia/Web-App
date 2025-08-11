@@ -2,7 +2,7 @@
 
 // function for our list view
 async function getAllRecords() {
-  let getResultElement = document.getElementById("brews");
+  let getResultElement = document.getElementById("records");
 
   const options = {
     method: "GET",
@@ -57,7 +57,7 @@ async function getAllRecords() {
 
 // function for our detail view
 async function getOneRecord(id) {
-  let getResultElement = document.getElementById("brews");
+  let getResultElement = document.getElementById("records");
 
   const options = {
     method: "GET",
@@ -78,33 +78,57 @@ async function getOneRecord(id) {
        let newHtml = "";
 
       let image = data.fields["img"];
-      let name = data.fields["name"];
-      let address = data.fields["Address"];
+      let name = data.fields["Name"];
+      let address = data.fields["address"];
       let zip = data.fields["zip"];
       let neighborhood = data.fields["neighborhood"];
+      let phone = data.fields["phone"];
       let description = data.fields["description"];
       let logo = data.fields["Logo"];
       let hours = data.fields["hours"];
-      let happy = data.fields["Happy"];
-      let food = data.fields["Food"];
-      let website = data.fields["Website"];
-      let merchandise = data.fields["Merchandise"];
-      let rating = data.fields["Rating"];
-      let star = data.fields["Stars"];
-      let outdoor = data.fields["Outdoor"];
+      let website = data.fields["url"];
       let yelp = data.fields["Yelp"];
-      let map = data.fields["Map"];
+      let email = data.fields["Email"];
+      let rating = data.fields["rating"];
+      let buy = data.fields["buy"];
 
-       newHtml = `
-     
-        <div class="row">
-          <div class="col">
-            ${
-              image
-                ? `<img class="details-image" src="${image[0].url}" alt="Photo of ${name}">`
-                : ``
-            }
-              `;
+      newHtml = `
+      <div class = "details-container">
+  <div class="row">
+    <a class="back-button btn w-auto col-3" href="./stores.html">Back to Store List</a>
+  </div>
+  <div class="row">
+    <div class="col">
+      ${
+        image
+          ? `<img class="details-image" src="${image[0].url}" alt="Photo of ${name}">`
+          : ``
+      }
+      <h4>Official Website</h4>
+      <a href="${website}" target="_blank">${name}</a>
+      <hr>
+      <h4>Contact</h4>
+      <p>${phone || ''}</p>
+      <p>${email || ''}</p>
+    </div>
+    <div class="col-lg-7">
+      <h2 id="details-title">${name}</h2>
+      <hr>
+      <h4>Description</h4>
+      <p>${description || ''}</p>
+      <hr>
+      <h4>Address</h4>
+      <p class="addresses text-decoration-none">${address || ''}</p>
+      <hr>
+      <h4>Hours</h4>
+      <p>${hours || ''}</p>
+      <h4>Buys Used Records?</h4>
+  <p>${buy ? "Yes, this store buys used records." : "No, this store does not buy used records."}</p>
+    </div>
+  </div>
+  </div>
+`;
+
 
       getResultElement.innerHTML = newHtml;
     });
