@@ -183,7 +183,17 @@ h1 {
 
 .details-container p {
 color: #ebeff2;
+font-family: "Winky Rough", sans-serif;
+font-size: 20px;
 }
-a {
-  text-decoration: none;
+.details-container h4 {
+color: #050c12;
+font-family: "Winky Rough", sans-serif;
+}
+
+
+.details-container a {
+  color: #050c12;
+font-family: "Winky Rough", sans-serif;
+font-size: 20px;
 }

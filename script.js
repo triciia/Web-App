@@ -90,12 +90,12 @@ async function getOneRecord(id) {
       let yelp = data.fields["Yelp"];
       let email = data.fields["Email"];
       let rating = data.fields["rating"];
-      let buy = data.fields["buy"];
+      let buy = data.fields["buy?"];
 
       newHtml = `
       <div class = "details-container">
   <div class="row">
-    <a class="back-button btn w-auto col-3" href="./stores.html">Back to Store List</a>
+    <a class="back-button btn w-auto col-3" href="./stores.html">Back to All Stores </a>
   </div>
   <div class="row">
     <div class="col">
@@ -105,11 +105,11 @@ async function getOneRecord(id) {
           : ``
       }
       <h4>Official Website</h4>
-      <a href="${website}" target="_blank">${name}</a>
+       <i class="bi bi-globe me-2"></i><a href="${website}" target="_blank">${name}</a>
       <hr>
       <h4>Contact</h4>
-      <p>${phone || ''}</p>
-      <p>${email || ''}</p>
+      <p><i class="bi bi-telephone me-2"></i>${phone || ''}</p>
+      <p><i class="bi bi-envelope me-2"></i>${email || ''}</p>
     </div>
     <div class="col-lg-7">
       <h2 id="details-title">${name}</h2>
