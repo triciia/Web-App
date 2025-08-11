@@ -32,7 +32,7 @@ body {
 
 /*--- Heading --- */
 h1 {
-
+      font-size: 55px;
      font-family: "Winky Rough", sans-serif;
      color:  #F9F3EF;
      text-align: center;
@@ -50,6 +50,17 @@ h1 {
 .carousel-item img {
     height: 100%;
     object-fit: cover; 
+}
+
+.carousel-caption{
+  display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 1rem;
+    border-radius:8px;
+}
+.carousel-caption h5,
+.carousel-caption p {
+    margin: 0; 
 }
 /* --- logo section --- */
 #logo {
