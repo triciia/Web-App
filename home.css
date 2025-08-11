@@ -63,10 +63,13 @@ h1 {
     margin: 0; 
 }
 /* --- logo section --- */
-#logo {
-  
-}
+#des{
+    color: #F9F3EF;
+    font-size: 35px;
+    padding: 0.5rem 1rem;
+    font-family: "Winky Rough", sans-serif;
 
+}
 /* ---- All Stores Section --- */
 /* ----CARDS --- */
 
@@ -168,3 +171,11 @@ h1 {
 }
 
 /* ---- Single Record Format --- */
+.details-image {
+   border-radius: 5px 5px 5px 5px;
+  height: auto;
+  max-height: 80vh;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1em;
+}

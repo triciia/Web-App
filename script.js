@@ -96,17 +96,14 @@ async function getOneRecord(id) {
       let map = data.fields["Map"];
 
        newHtml = `
-             <div class="row">
+     
+        <div class="row">
           <div class="col">
             ${
               image
                 ? `<img class="details-image" src="${image[0].url}" alt="Photo of ${name}">`
                 : ``
             }
-            
-          </div>
-          </div>
-
               `;
 
       getResultElement.innerHTML = newHtml;
