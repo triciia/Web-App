@@ -197,3 +197,10 @@ font-family: "Winky Rough", sans-serif;
 font-family: "Winky Rough", sans-serif;
 font-size: 20px;
 }
+
+#details-title {
+  color: #ebeff2;
+font-family: "Winky Rough", sans-serif;
+font-size: 60px;
+font-weight: bold;
+}
