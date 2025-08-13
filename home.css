@@ -152,12 +152,12 @@ h1 {
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers cards in row */
+  justify-content: center; 
 }
 
 .col-md-4 {
   flex: 0 0 auto;
-  width: 32%; /* Makes cards wider with consistent spacing */
+  width: 32%; 
   max-width: 400px; 
   min-width: 300px;
   padding: 0 8px;
@@ -173,7 +173,7 @@ h1 {
 /* ---- Single Record Format --- */
 .details-image {
   display: block;
-  max-width: 100%; /* Prevent overflow */
+  max-width: 100%; 
   height: auto;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2),
