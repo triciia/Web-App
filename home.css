@@ -209,3 +209,14 @@ font-family: "Winky Rough", sans-serif;
 font-size: 60px;
 font-weight: bold;
 }
+
+.back-button {
+  background-color: #e7c9a9;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 0 1em 1em;
+  cursor: pointer;
+}
