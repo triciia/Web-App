@@ -33,3 +33,6 @@ body {
 .navbar-logo-centered .navbar-nav .nav-link{
     padding: .5em 1em;
 }
+iframe {
+    width:80%;
+    height:600px;}
