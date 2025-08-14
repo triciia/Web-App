@@ -85,12 +85,22 @@ async function getOneRecord(id) {
       let phone = data.fields["phone"];
       let description = data.fields["description"];
       let logo = data.fields["Logo"];
-      let hours = data.fields["hours"];
+      let storeHours = data.fields["hours"];
       let website = data.fields["url"];
       let yelp = data.fields["Yelp"];
       let email = data.fields["Email"];
       let rating = data.fields["rating"];
       let buy = data.fields["buy?"];
+
+       let hoursHtml = "";
+      if ("hours" in data.fields) {
+        hoursHtml += "<ul>";
+        let hours = data.fields["hours"].split("\n\n");
+        for (let i = 0; i < hours.length; i++) {
+          hoursHtml += `<li>${hours[i]}</li>`;
+        }
+        hoursHtml += "</ul>";
+      }
 
       newHtml = `
       <div class = "details-container">
@@ -104,7 +114,7 @@ async function getOneRecord(id) {
           ? `<img class="details-image" src="${image[0].url}" alt="Photo of ${name}">`
           : ``
       }
-      <h4>Official Website</h4>
+      <h4>Check out their website!</h4>
        <i class="bi bi-globe me-2"></i><a href="${website}" target="_blank">${name}</a>
       <hr>
       <h4>Contact</h4>
@@ -121,7 +131,7 @@ async function getOneRecord(id) {
       <p class="addresses text-decoration-none">${address || ''}</p>
       <hr>
       <h4>Hours</h4>
-      <p>${hours || ''}</p>
+      <p class="text-light">${hoursHtml}</p>
       <h4>Buys Used Records?</h4>
   <p>${buy ? "Yes, this store buys used records." : "No, this store does not buy used records."}</p>
     </div>
