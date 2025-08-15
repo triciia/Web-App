@@ -29,6 +29,7 @@ async function getAllRecords() {
         let address = data.records[i].fields["address"]
         let neighborhood = data.records[i].fields["neighborhood"];
         let description = data.records[i].fields["description"];
+        let rating = data.records[i].fields["rating"];
 
         newHtml += `
              <div class="col-md-4 store-card">
@@ -52,6 +53,28 @@ async function getAllRecords() {
 
       getResultElement.innerHTML = newHtml;
     });
+}
+
+function stars(rating) {
+  let fullStars = Math.floor(rating);
+  let halfStar = rating % 1 >= 0.25 && rating % 1 < 0.75;
+  let emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+  let html = '';
+
+  for (let i = 0; i < fullStars; i++) {
+    html += `<i class="fa-solid fa-star" style="color: #FFFFE0;"></i> `;
+  }
+
+  if (halfStar) {
+    html += `<i class="fa-solid fa-star-half-stroke" style="color: #FFFFE0;"></i> `;
+  }
+
+  for (let i = 0; i < emptyStars; i++) {
+    html += `<i class="fa-regular fa-star" style="color: #FFFFE0;"></i> `;
+  }
+
+  return html;
 }
 
 // function for our detail view
@@ -133,6 +156,7 @@ async function getOneRecord(id) {
       <hr>
       <h4>Description</h4>
       <p>${description || ''}</p>
+      <p><small>${stars(rating)} (${rating})</small></p>
       <hr>
       <h4>Address</h4>
       <p class="addresses text-decoration-none">${address || ''}</p>
