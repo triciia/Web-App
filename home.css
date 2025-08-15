@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -180,7 +181,10 @@ h1 {
               0 6px 20px rgba(0,0,0,0.19);
   margin-bottom: 1em;
 }
-
+.details-container i {
+  color: #ebeff2;
+  font-size: 20px;
+}
 .details-container p {
 color: #ebeff2;
 font-family: "Winky Rough", sans-serif;
@@ -199,6 +203,18 @@ font-family: "Winky Rough", sans-serif;
 
 .details-container a {
   color: #050c12;
+
+font-family: "Winky Rough", sans-serif;
+font-size: 20px;
+}
+.details-container a:not(.back-button) {
+   color: #ebeff2;
+  font-family: "Winky Rough", sans-serif;
+  font-size: 20px;
+}
+.link-section {
+  color: #ebeff2;
+
 font-family: "Winky Rough", sans-serif;
 font-size: 20px;
 }
@@ -213,10 +229,18 @@ font-weight: bold;
 .back-button {
   background-color: #e7c9a9;
   border: none;
-  color: white;
+  color: #050c12;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin: 0 0 1em 1em;
   cursor: pointer;
+}
+.copyright {
+  color: #ebeff2;
+
+}
+footer {
+  background-color: #1a2f3e;
+  font-family: "Winky Rough", sans-serif;
 }

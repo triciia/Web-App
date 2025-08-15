@@ -39,9 +39,8 @@ async function getAllRecords() {
                    ${name}
                 </h5>
                 <p class = "address">${address}</p>
-                <a class="mt-1 btn btn-primary mt-2 " href="stores.html?id=${
-                  data.records[i].id
-                }">Learn more!</a>
+                <a class="mt-1 btn btn-primary mt-2 " href="stores.html?id=${data.records[i].id
+          }">Learn more!</a>
               </div>
             </div>
           </div>
@@ -73,9 +72,9 @@ async function getOneRecord(id) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data); // response is a single object
-       getResultElement.innerHTML = "";
+      getResultElement.innerHTML = "";
 
-       let newHtml = "";
+      let newHtml = "";
 
       let image = data.fields["img"];
       let name = data.fields["Name"];
@@ -92,7 +91,7 @@ async function getOneRecord(id) {
       let rating = data.fields["rating"];
       let buy = data.fields["buy?"];
 
-       let hoursHtml = "";
+      let hoursHtml = "";
       if ("hours" in data.fields) {
         hoursHtml += "<ul>";
         let hours = data.fields["hours"].split("\n\n");
@@ -109,13 +108,21 @@ async function getOneRecord(id) {
   </div>
   <div class="row">
     <div class="col">
-      ${
-        image
+      ${image
           ? `<img class="details-image" src="${image[0].url}" alt="Photo of ${name}">`
           : ``
-      }
-      <h4>Check out their website!</h4>
-       <i class="bi bi-globe me-2"></i><a href="${website}" target="_blank">${name}</a>
+        }
+      <h4>Check out their website and yelp!</h4>
+     <div class="link-section">
+  <i class="bi bi-globe me-2" style="#ebeff2"></i>
+  <a href="${website}" target="_blank">${name}</a>
+</div>
+
+<div class="link-section">
+  <i class="bi bi-yelp me-2"></i>
+  <a href="${yelp}" target="_blank">Yelp</a>
+</div>
+
       <hr>
       <h4>Contact</h4>
       <p><i class="bi bi-telephone me-2"></i>${phone || ''}</p>
